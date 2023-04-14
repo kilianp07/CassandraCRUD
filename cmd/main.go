@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/kilianp07/CassandraCRUD/pkg/cassandra"
+	"github.com/kilianp07/CassandraSeeder/pkg/cassandra"
 )
 
 func main() {
