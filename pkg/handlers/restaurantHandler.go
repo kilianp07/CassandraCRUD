@@ -2,8 +2,10 @@ package handlers
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
+	restaurantRepo "github.com/kilianp07/CassandraCRUD/pkg/repositories/restaurant"
 	"github.com/kilianp07/CassandraCRUD/utils/structs"
 )
 
@@ -22,38 +24,23 @@ func CreateRestaurant(c *gin.Context) {
 
 // GetRestaurant gets a restaurant by ID
 func GetRestaurant(c *gin.Context) {
-	restaurantID := c.Param("id")
+	var (
+		restaurant   *structs.Restaurant
+		err          error
+		restaurantID int
+	)
 
-	// TODO: Implement logic to retrieve restaurant from the database based on restaurantID
-
-	// Example response
-	restaurant := &structs.Restaurant{
-		// Set values from database query
-	}
-
-	c.JSON(http.StatusOK, gin.H{"data": restaurant})
-}
-
-// UpdateRestaurant updates a restaurant by ID
-func UpdateRestaurant(c *gin.Context) {
-	restaurantID := c.Param("id")
-
-	var restaurant structs.Restaurant
-	if err := c.ShouldBindJSON(&restaurant); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	// Cast ID parameter from string to int
+	if restaurantID, err = strconv.Atoi(c.Param("id")); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Unable to process with this id parameter": err.Error()})
 		return
 	}
 
-	// TODO: Implement logic to update restaurant in the database based on restaurantID
+	// Get restaurant from cassandra DB
+	if restaurant, err = restaurantRepo.GetRestaurantById(restaurantID); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"Cannot retrieve data": err.Error()})
+		return
+	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Restaurant updated successfully", "data": restaurant})
-}
-
-// DeleteRestaurant deletes a restaurant by ID
-func DeleteRestaurant(c *gin.Context) {
-	restaurantID := c.Param("id")
-
-	// TODO: Implement logic to delete restaurant from the database based on restaurantID
-
-	c.JSON(http.StatusOK, gin.H{"message": "Restaurant deleted successfully"})
+	c.JSON(http.StatusOK, gin.H{"data": restaurant})
 }

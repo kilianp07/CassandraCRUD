@@ -8,7 +8,7 @@ import (
 
 type Cassandra struct {
 	cluster *gocql.ClusterConfig
-	session *gocql.Session
+	Session *gocql.Session
 
 	host     string
 	username string
@@ -46,15 +46,15 @@ func (c *Cassandra) initialize() error {
 
 	c.cluster.Keyspace = c.keyspace
 
-	c.session, err = c.cluster.CreateSession()
+	c.Session, err = c.cluster.CreateSession()
 	if err != nil {
 		fmt.Printf("Error creating session: %v \n", err)
 		return err
 	}
-	fmt.Println("cassandra well initialized", c.session)
+	fmt.Println("cassandra well initialized", c.Session)
 	return nil
 }
 
 func (c *Cassandra) Close() {
-	c.session.Close()
+	c.Session.Close()
 }
