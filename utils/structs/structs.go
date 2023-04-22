@@ -28,3 +28,9 @@ type Restaurant struct {
 	Name         string  `json:"name"`
 	RestaurantID string  `json:"restaurant_id"`
 }
+
+type RestaurantRequest struct {
+	Borough string `json:"borough"`
+	Cuisine string `json:"cuisine"`
+	Name    string `json:"name"`
+}

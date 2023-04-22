@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/kilianp07/CassandraCRUD/pkg/api"
 	"github.com/kilianp07/CassandraCRUD/pkg/cassandra"
 	envretriever "github.com/kilianp07/CassandraCRUD/utils/envRetriever"
 )
@@ -17,4 +18,5 @@ func main() {
 	}
 	cassandra.Close()
 
+	api.Start()
 }

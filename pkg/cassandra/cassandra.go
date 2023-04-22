@@ -51,7 +51,7 @@ func (c *Cassandra) initialize() error {
 		fmt.Printf("Error creating session: %v \n", err)
 		return err
 	}
-	fmt.Println("cassandra well initialized", c.Session)
+	fmt.Println("cassandra well initialized")
 	return nil
 }
 
