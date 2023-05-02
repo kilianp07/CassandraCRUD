@@ -22,7 +22,7 @@ func GetById(id string) (*structs.Restaurant, error) {
 	defer c.Session.Close()
 
 	query := "SELECT restaurant_id, borough, cuisine, name FROM restaurants WHERE restaurant_id = ?"
-	if err := c.Session.Query(query, id).Scan(&restaurant.RestaurantID, &restaurant.Borough, &restaurant.Cuisine, &restaurant.Name); err != nil {
+	if err := c.Session.Query(query, id).Scan(&restaurant.Id, &restaurant.Borough, &restaurant.Cuisine, &restaurant.Name); err != nil {
 		return nil, err
 	}
 	return restaurant, nil
@@ -46,7 +46,7 @@ func GetAll() ([]*structs.Restaurant, error) {
 
 	for {
 		restaurant := &structs.Restaurant{}
-		if !iter.Scan(&restaurant.RestaurantID, &restaurant.Borough, &restaurant.Cuisine, &restaurant.Name) {
+		if !iter.Scan(&restaurant.Id, &restaurant.Borough, &restaurant.Cuisine, &restaurant.Name) {
 			break
 		}
 		restaurants = append(restaurants, restaurant)
@@ -71,7 +71,7 @@ func Create(restaurant *structs.Restaurant) error {
 	defer c.Session.Close()
 
 	query := "INSERT INTO restaurants (restaurant_id, borough, cuisine, name) VALUES (?, ?, ?, ?)"
-	if err := c.Session.Query(query, restaurant.RestaurantID, restaurant.Borough, restaurant.Cuisine, restaurant.Name).Exec(); err != nil {
+	if err := c.Session.Query(query, restaurant.Id, restaurant.Borough, restaurant.Cuisine, restaurant.Name).Exec(); err != nil {
 		return err
 	}
 	return nil
@@ -112,7 +112,7 @@ func Update(restaurant structs.Restaurant, id string) (*structs.Restaurant, erro
 	}
 
 	// Get the updated restaurant and return it
-	updatedRestaurant, err := GetById(restaurant.RestaurantID)
+	updatedRestaurant, err := GetById(restaurant.Id)
 	if err != nil {
 		return nil, err
 	}
