@@ -6,10 +6,12 @@ type Coordinates struct {
 }
 
 type Address struct {
-	Building string      `json:"building"`
-	Coord    Coordinates `json:"coord"`
-	Street   string      `json:"street"`
-	Zipcode  string      `json:"zipcode"`
+	Id           string      `json:"id"`
+	Building     string      `json:"building"`
+	Coord        Coordinates `json:"coord"`
+	Street       string      `json:"street"`
+	Zipcode      string      `json:"zipcode"`
+	RestaurantId string      `json:"restaurant_id"`
 }
 
 type Grade struct {
@@ -21,16 +23,23 @@ type Grade struct {
 }
 
 type Restaurant struct {
-	Address      Address `json:"address"`
-	Borough      string  `json:"borough"`
-	Cuisine      string  `json:"cuisine"`
-	Grades       []Grade `json:"grades"`
-	Name         string  `json:"name"`
-	RestaurantID string  `json:"restaurant_id"`
+	Address Address `json:"address"`
+	Borough string  `json:"borough"`
+	Cuisine string  `json:"cuisine"`
+	Grades  []Grade `json:"grades"`
+	Name    string  `json:"name"`
+	Id      string  `json:"id"`
 }
 
 type RestaurantRequest struct {
 	Borough string `json:"borough"`
 	Cuisine string `json:"cuisine"`
 	Name    string `json:"name"`
+}
+
+type AddressRequest struct {
+	Building     string `json:"building"`
+	Street       string `json:"street"`
+	Zipcode      string `json:"zipcode"`
+	RestaurantId string `json:"restaurant_id"`
 }

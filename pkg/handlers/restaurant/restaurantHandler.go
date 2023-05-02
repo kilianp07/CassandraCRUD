@@ -1,4 +1,4 @@
-package handlers
+package restaurantHandler
 
 import (
 	"net/http"
@@ -17,10 +17,10 @@ func CreateRestaurant(c *gin.Context) {
 	}
 
 	newRestaurant := &structs.Restaurant{
-		RestaurantID: uuid.New().String(),
-		Borough:      restaurantRequest.Borough,
-		Cuisine:      restaurantRequest.Cuisine,
-		Name:         restaurantRequest.Name,
+		Id:      uuid.New().String(),
+		Borough: restaurantRequest.Borough,
+		Cuisine: restaurantRequest.Cuisine,
+		Name:    restaurantRequest.Name,
 	}
 
 	if err := restaurantRepo.Create(newRestaurant); err != nil {
@@ -28,7 +28,7 @@ func CreateRestaurant(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{"success": "Restaurant created successfully", "restaurant_id": newRestaurant.RestaurantID})
+	c.JSON(http.StatusCreated, gin.H{"success": "Restaurant created successfully", "restaurant_id": newRestaurant.Id})
 }
 
 // GetAllRestaurants gets all restaurants

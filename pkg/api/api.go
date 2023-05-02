@@ -2,7 +2,8 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/kilianp07/CassandraCRUD/pkg/handlers"
+	addressHandler "github.com/kilianp07/CassandraCRUD/pkg/handlers/address"
+	restaurantHandler "github.com/kilianp07/CassandraCRUD/pkg/handlers/restaurant"
 )
 
 func Start() {
@@ -11,10 +12,18 @@ func Start() {
 	router := gin.Default()
 
 	// Restaurant CRUD
-	router.POST("/restaurant", handlers.CreateRestaurant)
-	router.GET("/restaurant/:id", handlers.GetRestaurant)
-	router.GET("/restaurant/all", handlers.GetAllRestaurants)
-	router.DELETE("/restaurant/:id", handlers.DeleteRestaurant)
-	router.PUT("/restaurant/:id", handlers.UpdateRestaurant)
+	router.POST("/restaurant", restaurantHandler.CreateRestaurant)
+	router.GET("/restaurant/:id", restaurantHandler.GetRestaurant)
+	router.GET("/restaurant/all", restaurantHandler.GetAllRestaurants)
+	router.DELETE("/restaurant/:id", restaurantHandler.DeleteRestaurant)
+	router.PUT("/restaurant/:id", restaurantHandler.UpdateRestaurant)
+
+	// Address CRUD
+	router.POST("/address", addressHandler.CreateAddress)
+	router.GET("/address/all", addressHandler.GetAllAddresses)
+	router.GET("/address/:id", addressHandler.GetAddressById)
+	router.PUT("/address/:id", addressHandler.UpdateAddress)
+	router.DELETE("/address/:id", addressHandler.DeleteAddress)
+
 	router.Run(":8080")
 }
