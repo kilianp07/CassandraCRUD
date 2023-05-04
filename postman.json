@@ -7,34 +7,15 @@
 	},
 	"item": [
 		{
-			"name": "Get By ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"restaurant",
-						"{{$restaurant_id}}"
-					]
-				}
-			},
-			"response": [
+			"name": "Restaurant",
+			"item": [
 				{
-					"name": "Get By ID",
-					"originalRequest": {
-						"method": "GET",
+					"name": "Delete Restaurant",
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/35a69bd6-569c-472d-9e28-977b6f402aad",
+							"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -45,88 +26,145 @@
 							"port": "8080",
 							"path": [
 								"restaurant",
-								"35a69bd6-569c-472d-9e28-977b6f402aad"
+								"{{$restaurant_id}}"
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 22 Apr 2023 09:53:06 GMT"
-						},
-						{
-							"key": "Content-Length",
-							"value": "241"
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8080/restaurant/622b4214-6798-4295-b339-f0e3679edae2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"restaurant",
+										"622b4214-6798-4295-b339-f0e3679edae2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Apr 2023 09:51:37 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Restaurant deleted successfully\"\n}"
 						}
-					],
-					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"address\": {\n            \"building\": \"\",\n            \"coord\": {\n                \"type\": \"\",\n                \"coordinates\": [\n                    0,\n                    0\n                ]\n            },\n            \"street\": \"\",\n            \"zipcode\": \"\"\n        },\n        \"borough\": \"Queens\",\n        \"cuisine\": \"Korean\",\n        \"grades\": null,\n        \"name\": \"Han Song Ting Retaurant\",\n        \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n    }\n}"
-				}
-			]
-		},
-		{
-			"name": "Get all Restaurants",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8080/restaurant/all",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"restaurant",
-						"all"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "New Restaurant",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"name\": \"Test Restaurant\"\n}\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8080/restaurant",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"restaurant"
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"{{$restaurant_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8080/restaurant/35a69bd6-569c-472d-9e28-977b6f402aad",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"restaurant",
+										"35a69bd6-569c-472d-9e28-977b6f402aad"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 May 2023 09:22:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "349"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"address\": {\n            \"id\": \"7363d9e5-ca88-47dd-bb17-70190749cf2a\",\n            \"building\": \"37-02\",\n            \"coord\": {\n                \"type\": \"\",\n                \"coordinates\": [\n                    0,\n                    0\n                ]\n            },\n            \"street\": \"Main Street\",\n            \"zipcode\": \"11354\",\n            \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n        },\n        \"borough\": \"Brooklyn\",\n        \"cuisine\": \"Italian\",\n        \"grades\": null,\n        \"name\": \"New Restaurant Name\",\n        \"id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n    }\n}"
+						}
 					]
-				}
-			},
-			"response": [
+				},
+				{
+					"name": "Get all Restaurants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/restaurant/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "New Restaurant",
-					"originalRequest": {
+					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -153,108 +191,66 @@
 							]
 						}
 					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 22 Apr 2023 09:05:21 GMT"
-						},
-						{
-							"key": "Content-Length",
-							"value": "100"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"restaurant_id\": \"45cf9764-5204-473e-a43d-8e527e983e77\",\n    \"success\": \"Restaurant created successfully\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Delete Restaurant",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"restaurant",
-						"{{$restaurant_id}}"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "New Request",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/622b4214-6798-4295-b339-f0e3679edae2",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+							"name": "New Restaurant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"name\": \"Test Restaurant\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8080/restaurant",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"restaurant"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Apr 2023 09:05:21 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								}
 							],
-							"port": "8080",
-							"path": [
-								"restaurant",
-								"622b4214-6798-4295-b339-f0e3679edae2"
-							]
+							"cookie": [],
+							"body": "{\n    \"restaurant_id\": \"45cf9764-5204-473e-a43d-8e527e983e77\",\n    \"success\": \"Restaurant created successfully\"\n}"
 						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 22 Apr 2023 09:51:37 GMT"
-						},
-						{
-							"key": "Content-Length",
-							"value": "45"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Message\": \"Restaurant deleted successfully\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Update Restaurant",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": [
+					]
+				},
 				{
 					"name": "Update Restaurant",
-					"originalRequest": {
+					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"name\": \"New Restaurant Name\",\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n}",
+							"raw": "\n{\n    \"name\": \"New Restaurant Name\",\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"restaurant_id\": \"{{$restaurant_id}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -262,7 +258,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/35a69bd6-569c-472d-9e28-977b6f402aad",
+							"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -273,29 +269,155 @@
 							"port": "8080",
 							"path": [
 								"restaurant",
-								"35a69bd6-569c-472d-9e28-977b6f402aad"
+								"{{$restaurant_id}}"
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 22 Apr 2023 12:26:04 GMT"
-						},
-						{
-							"key": "Content-Length",
-							"value": "284"
+							"name": "Update Restaurant",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n    \"name\": \"New Restaurant Name\",\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"restaurant_id\": \"{{$restaurant_id}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"restaurant",
+										"{{$restaurant_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Apr 2023 12:26:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Restaurant updated successfully\",\n    \"data\": {\n        \"address\": {\n            \"building\": \"\",\n            \"coord\": {\n                \"type\": \"\",\n                \"coordinates\": [\n                    0,\n                    0\n                ]\n            },\n            \"street\": \"\",\n            \"zipcode\": \"\"\n        },\n        \"borough\": \"Brooklyn\",\n        \"cuisine\": \"Italian\",\n        \"grades\": null,\n        \"name\": \"New Restaurant Name\",\n        \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n    }\n}"
 						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Message\": \"Restaurant updated successfully\",\n    \"data\": {\n        \"address\": {\n            \"building\": \"\",\n            \"coord\": {\n                \"type\": \"\",\n                \"coordinates\": [\n                    0,\n                    0\n                ]\n            },\n            \"street\": \"\",\n            \"zipcode\": \"\"\n        },\n        \"borough\": \"Brooklyn\",\n        \"cuisine\": \"Italian\",\n        \"grades\": null,\n        \"name\": \"New Restaurant Name\",\n        \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n    }\n}"
+					]
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/address/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/address/{{$address_id}}",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"{{$address_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8080/address/{{$address_id}}",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8080",
+									"path": [
+										"address",
+										"{{$address_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 May 2023 10:14:45 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"Address deleted successfully\"\n}"
+						}
+					]
 				}
 			]
 		}
@@ -304,6 +426,10 @@
 		{
 			"key": "$restaurant_id",
 			"value": "35a69bd6-569c-472d-9e28-977b6f402aad"
+		},
+		{
+			"key": "$address_id",
+			"value": "70b6fc7a-40d0-4139-af7e-02197810d432"
 		}
 	]
 }
