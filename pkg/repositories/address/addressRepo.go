@@ -1,6 +1,7 @@
 package addressRepo
 
 import (
+	"github.com/gocql/gocql"
 	"github.com/kilianp07/CassandraCRUD/pkg/cassandra"
 	envretriever "github.com/kilianp07/CassandraCRUD/utils/envRetriever"
 	"github.com/kilianp07/CassandraCRUD/utils/structs"
@@ -61,6 +62,19 @@ func GetById(id string) (*structs.Address, error) {
 
 	query := "SELECT address_id, building, street, zipcode, restaurant_id FROM addresses WHERE address_id = ? LIMIT 1"
 	if err := c.Session.Query(query, id).Scan(&address.Id, &address.Building, &address.Street, &address.Zipcode, &address.RestaurantId); err != nil {
+		return nil, err
+	}
+	return address, nil
+}
+
+func GetByRestaurantId(restaurantId string, c *cassandra.Cassandra) (*structs.Address, error) {
+	address := &structs.Address{}
+
+	query := "SELECT address_id, building, street, zipcode, restaurant_id FROM addresses WHERE restaurant_id = ? LIMIT 1 ALLOW FILTERING"
+	if err := c.Session.Query(query, restaurantId).Scan(&address.Id, &address.Building, &address.Street, &address.Zipcode, &address.RestaurantId); err != nil {
+		if err == gocql.ErrNotFound {
+			return nil, nil
+		}
 		return nil, err
 	}
 	return address, nil

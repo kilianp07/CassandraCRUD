@@ -2,6 +2,7 @@ package restaurantRepo
 
 import (
 	"github.com/kilianp07/CassandraCRUD/pkg/cassandra"
+	addressRepo "github.com/kilianp07/CassandraCRUD/pkg/repositories/address"
 	envretriever "github.com/kilianp07/CassandraCRUD/utils/envRetriever"
 	"github.com/kilianp07/CassandraCRUD/utils/structs"
 )
@@ -25,6 +26,7 @@ func GetById(id string) (*structs.Restaurant, error) {
 	if err := c.Session.Query(query, id).Scan(&restaurant.Id, &restaurant.Borough, &restaurant.Cuisine, &restaurant.Name); err != nil {
 		return nil, err
 	}
+	restaurant.Address, err = addressRepo.GetByRestaurantId(restaurant.Id, c)
 	return restaurant, nil
 }
 
@@ -53,6 +55,16 @@ func GetAll() ([]*structs.Restaurant, error) {
 	}
 	if err := iter.Close(); err != nil {
 		return nil, err
+	}
+
+	for _, restaurant := range restaurants {
+		address, err := addressRepo.GetByRestaurantId(restaurant.Id, c)
+		if err != nil {
+			return nil, err
+		}
+		if address != nil {
+			restaurant.Address = address
+		}
 	}
 
 	return restaurants, nil
