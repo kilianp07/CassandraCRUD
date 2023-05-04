@@ -23,12 +23,12 @@ type Grade struct {
 }
 
 type Restaurant struct {
-	Address Address `json:"address"`
-	Borough string  `json:"borough"`
-	Cuisine string  `json:"cuisine"`
-	Grades  []Grade `json:"grades"`
-	Name    string  `json:"name"`
-	Id      string  `json:"id"`
+	Address *Address `json:"address"`
+	Borough string   `json:"borough"`
+	Cuisine string   `json:"cuisine"`
+	Grades  []Grade  `json:"grades"`
+	Name    string   `json:"name"`
+	Id      string   `json:"id"`
 }
 
 type RestaurantRequest struct {
