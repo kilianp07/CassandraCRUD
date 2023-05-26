@@ -11,7 +11,6 @@ type envVars struct {
 	CassandraHost     string
 	CassandraUsername string
 	CassandraPassword string
-	CassandraKeyspace string
 }
 
 func GetEnvVars() envVars {
@@ -32,6 +31,5 @@ func GetEnvVars() envVars {
 		CassandraHost:     os.Getenv("CASSANDRA_HOST"),
 		CassandraUsername: os.Getenv("CASSANDRA_USERNAME"),
 		CassandraPassword: os.Getenv("CASSANDRA_PASSWORD"),
-		CassandraKeyspace: os.Getenv("CASSANDRA_KEYSPACE"),
 	}
 }
