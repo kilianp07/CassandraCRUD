@@ -9,7 +9,10 @@ import (
 func main() {
 
 	// Read .env file
-	vars := envretriever.GetEnvVars()
+	vars, err := envretriever.GetEnvVars()
+	if err != nil {
+		panic(err)
+	}
 
 	// Test cassandra connection
 	cassandra, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")

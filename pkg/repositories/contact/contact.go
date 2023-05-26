@@ -7,7 +7,7 @@ import (
 )
 
 func GetById(id string) (*structs.Contact, error) {
-	vars := envretriever.GetEnvVars()
+	vars, _ := envretriever.GetEnvVars()
 	contact := &structs.Contact{}
 
 	c, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")
@@ -25,7 +25,7 @@ func GetById(id string) (*structs.Contact, error) {
 }
 
 func GetAll() ([]*structs.Contact, error) {
-	vars := envretriever.GetEnvVars()
+	vars, _ := envretriever.GetEnvVars()
 	contacts := []*structs.Contact{}
 
 	c, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")
@@ -49,7 +49,7 @@ func GetAll() ([]*structs.Contact, error) {
 }
 
 func Create(contact *structs.Contact) error {
-	vars := envretriever.GetEnvVars()
+	vars, _ := envretriever.GetEnvVars()
 
 	c, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")
 	if err != nil {
@@ -65,7 +65,7 @@ func Create(contact *structs.Contact) error {
 }
 
 func Update(contact *structs.Contact) error {
-	vars := envretriever.GetEnvVars()
+	vars, _ := envretriever.GetEnvVars()
 
 	c, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")
 	if err != nil {
@@ -81,7 +81,7 @@ func Update(contact *structs.Contact) error {
 }
 
 func Delete(id string) error {
-	vars := envretriever.GetEnvVars()
+	vars, _ := envretriever.GetEnvVars()
 
 	c, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")
 	if err != nil {
