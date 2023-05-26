@@ -1,175 +1,71 @@
 {
 	"info": {
-		"_postman_id": "42c415d9-94e3-4701-a67b-eff0b049922b",
+		"_postman_id": "9391b265-5bb7-4eda-990d-b79a3304c400",
 		"name": "Cassandra CRUD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23665606"
 	},
 	"item": [
 		{
-			"name": "Restaurant",
-			"item": [
-				{
-					"name": "Delete Restaurant",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8080",
-							"path": [
-								"restaurant",
-								"{{$restaurant_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "New Request",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://127.0.0.1:8080/restaurant/622b4214-6798-4295-b339-f0e3679edae2",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8080",
-									"path": [
-										"restaurant",
-										"622b4214-6798-4295-b339-f0e3679edae2"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 22 Apr 2023 09:51:37 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "45"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Message\": \"Restaurant deleted successfully\"\n}"
-						}
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/contact",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"contact"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"aeeabd1c-68f8-41f4-a70c-9d71c824eac5\",\n    \"title\": \"test\",\n    \"name\": \"test\",\n    \"address\": \"test\",\n    \"realAddress\": \"test\",\n    \"department\": \"test\",\n    \"country\": \"test\",\n    \"tel\": \"test\",\n    \"email\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
-				{
-					"name": "Get By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8080",
-							"path": [
-								"restaurant",
-								"{{$restaurant_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get By ID",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://127.0.0.1:8080/restaurant/35a69bd6-569c-472d-9e28-977b6f402aad",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8080",
-									"path": [
-										"restaurant",
-										"35a69bd6-569c-472d-9e28-977b6f402aad"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 04 May 2023 09:22:31 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "349"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"address\": {\n            \"id\": \"7363d9e5-ca88-47dd-bb17-70190749cf2a\",\n            \"building\": \"37-02\",\n            \"coord\": {\n                \"type\": \"\",\n                \"coordinates\": [\n                    0,\n                    0\n                ]\n            },\n            \"street\": \"Main Street\",\n            \"zipcode\": \"11354\",\n            \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n        },\n        \"borough\": \"Brooklyn\",\n        \"cuisine\": \"Italian\",\n        \"grades\": null,\n        \"name\": \"New Restaurant Name\",\n        \"id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n    }\n}"
-						}
+				"url": {
+					"raw": "http://127.0.0.1:8080/contact",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"contact"
 					]
-				},
+				}
+			},
+			"response": [
 				{
-					"name": "Get all Restaurants",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/all",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8080",
-							"path": [
-								"restaurant",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Restaurant",
-					"request": {
+					"name": "Create",
+					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"name\": \"Test Restaurant\"\n}\n",
+							"raw": "{\n    \"id\": \"aeeabd1c-68f8-41f4-a70c-9d71c824eac5\",\n    \"title\": \"test\",\n    \"name\": \"test\",\n    \"address\": \"test\",\n    \"realAddress\": \"test\",\n    \"department\": \"test\",\n    \"country\": \"test\",\n    \"tel\": \"test\",\n    \"email\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -177,7 +73,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant",
+							"raw": "http://127.0.0.1:8080/contact",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -187,70 +83,201 @@
 							],
 							"port": "8080",
 							"path": [
-								"restaurant"
+								"contact"
 							]
 						}
 					},
-					"response": [
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
 						{
-							"name": "New Restaurant",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"name\": \"Test Restaurant\"\n}\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8080/restaurant",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8080",
-									"path": [
-										"restaurant"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 22 Apr 2023 09:05:21 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "100"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"restaurant_id\": \"45cf9764-5204-473e-a43d-8e527e983e77\",\n    \"success\": \"Restaurant created successfully\"\n}"
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 10:36:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
 						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"aeeabd1c-68f8-41f4-a70c-9d71c824eac5\",\n        \"title\": \"test\",\n        \"name\": \"test\",\n        \"address\": \"test\",\n        \"realAddress\": \"test\",\n        \"department\": \"test\",\n        \"country\": \"test\",\n        \"tel\": \"test\",\n        \"email\": \"test\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/contact/aeeabd1c-68f8-41f4-a70c-9d71c824eac5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"aeeabd1c-68f8-41f4-a70c-9d71c824eac5"
 					]
-				},
+				}
+			},
+			"response": [
 				{
-					"name": "Update Restaurant",
-					"request": {
+					"name": "Delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/contact/aeeabd1c-68f8-41f4-a70c-9d71c824eac5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"contact",
+								"aeeabd1c-68f8-41f4-a70c-9d71c824eac5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 10:37:24 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"aeeabd1c-68f8-41f4-a70c-9d71c824eac5\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get By id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/contact/2957b80f-b0cd-46d9-9073-858400c37edd",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"2957b80f-b0cd-46d9-9073-858400c37edd"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get By id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/contact/2957b80f-b0cd-46d9-9073-858400c37edd",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"contact",
+								"2957b80f-b0cd-46d9-9073-858400c37edd"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 10:40:07 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "410"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"2957b80f-b0cd-46d9-9073-858400c37edd\",\n        \"title\": \"CFA chambre de Métiers et de l'artisanat du nord Lille : S'inscrire, Cursus, Formation \",\n        \"name\": \"Chambre de métiers et de l'artisanat Hauts-de-France - LAON\",\n        \"address\": \"30 rue d’Enfer 02000 LAON France\",\n        \"realAddress\": \"30 rue d’Enfer\",\n        \"department\": \"02000 LAON\",\n        \"country\": \"France\",\n        \"tel\": \"09 72 72 72 07\",\n        \"email\": \"contact@cma-hautsdefrance.fr\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"a60a6819-f365-4e05-98e8-eda8b6b824eb\",\n    \"title\": \"Chambre de métiers et de l'artisanat Hauts-de-France (Centre de formation d’apprentis - Chambre de métiers et de l’artisanat du Nord) \",\n    \"name\": \"Chambre de métiers et de l'artisanat Hauts-de-France - ROUVIGNIES\",\n    \"address\": \"6 rue Edmond Herly 59220 ROUVIGNIES France\",\n    \"realAddress\": \"6 rue Edmond Herly\",\n    \"department\": \"59220 ROUVIGNIES\",\n    \"country\": \"France\",\n    \"tel\": \"09 72 72 72 07\",\n    \"email\": \"contact@cma-hautsdefrance.fr\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/contact/a60a6819-f365-4e05-98e8-eda8b6b824eb",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"a60a6819-f365-4e05-98e8-eda8b6b824eb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update",
+					"originalRequest": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n    \"name\": \"New Restaurant Name\",\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"restaurant_id\": \"{{$restaurant_id}}\"\n}",
+							"raw": "{\n    \"id\": \"a60a6819-f365-4e05-98e8-eda8b6b824eb\",\n    \"title\": \"Chambre de métiers et de l'artisanat Hauts-de-France (Centre de formation d’apprentis - Chambre de métiers et de l’artisanat du Nord) \",\n    \"name\": \"Chambre de métiers et de l'artisanat Hauts-de-France - ROUVIGNIES\",\n    \"address\": \"6 rue Edmond Herly 59220 ROUVIGNIES France\",\n    \"realAddress\": \"6 rue Edmond Herly\",\n    \"department\": \"59220 ROUVIGNIES\",\n    \"country\": \"France\",\n    \"tel\": \"09 72 72 72 07\",\n    \"email\": \"contact@cma-hautsdefrance.fr\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +285,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
+							"raw": "http://127.0.0.1:8080/contact/a60a6819-f365-4e05-98e8-eda8b6b824eb",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -268,168 +295,32 @@
 							],
 							"port": "8080",
 							"path": [
-								"restaurant",
-								"{{$restaurant_id}}"
+								"contact",
+								"a60a6819-f365-4e05-98e8-eda8b6b824eb"
 							]
 						}
 					},
-					"response": [
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
 						{
-							"name": "Update Restaurant",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "\n{\n    \"name\": \"New Restaurant Name\",\n    \"borough\": \"Brooklyn\",\n    \"cuisine\": \"Italian\",\n    \"restaurant_id\": \"{{$restaurant_id}}\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://127.0.0.1:8080/restaurant/{{$restaurant_id}}",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8080",
-									"path": [
-										"restaurant",
-										"{{$restaurant_id}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 22 Apr 2023 12:26:04 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "284"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Message\": \"Restaurant updated successfully\",\n    \"data\": {\n        \"address\": {\n            \"building\": \"\",\n            \"coord\": {\n                \"type\": \"\",\n                \"coordinates\": [\n                    0,\n                    0\n                ]\n            },\n            \"street\": \"\",\n            \"zipcode\": \"\"\n        },\n        \"borough\": \"Brooklyn\",\n        \"cuisine\": \"Italian\",\n        \"grades\": null,\n        \"name\": \"New Restaurant Name\",\n        \"restaurant_id\": \"35a69bd6-569c-472d-9e28-977b6f402aad\"\n    }\n}"
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 11:47:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "484"
 						}
-					]
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"a60a6819-f365-4e05-98e8-eda8b6b824eb\",\n        \"title\": \"Chambre de métiers et de l'artisanat Hauts-de-France (Centre de formation d’apprentis - Chambre de métiers et de l’artisanat du Nord) \",\n        \"name\": \"Chambre de métiers et de l'artisanat Hauts-de-France - ROUVIGNIES\",\n        \"address\": \"6 rue Edmond Herly 59220 ROUVIGNIES France\",\n        \"realAddress\": \"6 rue Edmond Herly\",\n        \"department\": \"59220 ROUVIGNIES\",\n        \"country\": \"France\",\n        \"tel\": \"09 72 72 72 07\",\n        \"email\": \"contact@cma-hautsdefrance.fr\"\n    }\n}"
 				}
 			]
-		},
-		{
-			"name": "Address",
-			"item": [
-				{
-					"name": "Get All",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8080/address/all",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8080",
-							"path": [
-								"address",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8080/address/{{$address_id}}",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8080",
-							"path": [
-								"address",
-								"{{$address_id}}"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Delete",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://127.0.0.1:8080/address/{{$address_id}}",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8080",
-									"path": [
-										"address",
-										"{{$address_id}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 May 2023 10:14:45 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "42"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": \"Address deleted successfully\"\n}"
-						}
-					]
-				}
-			]
-		}
-	],
-	"variable": [
-		{
-			"key": "$restaurant_id",
-			"value": "35a69bd6-569c-472d-9e28-977b6f402aad"
-		},
-		{
-			"key": "$address_id",
-			"value": "70b6fc7a-40d0-4139-af7e-02197810d432"
 		}
 	]
 }

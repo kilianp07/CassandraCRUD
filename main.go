@@ -12,7 +12,7 @@ func main() {
 	vars := envretriever.GetEnvVars()
 
 	// Test cassandra connection
-	cassandra, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, vars.CassandraKeyspace)
+	cassandra, err := cassandra.NewCassandra(vars.CassandraHost, vars.CassandraUsername, vars.CassandraPassword, "contacts")
 	if err != nil {
 		panic(err)
 	}
