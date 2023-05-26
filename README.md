@@ -21,4 +21,6 @@
     `go version`
 
 
-
+## Usage
+See [Postman doc](./postman.md) to test the API. \
+You also can downloand the [Postman collection](./postman.json) and import it to your Postman.
