@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   cassandra:
-    image: cassandra:4.0
+    image: cassandra:4.1@sha256:2a58bdfe124aa239a1846a6330b8f52bfd4321726995269382ab925fef74bd71
     ports:
       - 9042:9042
     volumes:
